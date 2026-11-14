@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VamshiOS | Personal Developer Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="desktop">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="brand">Vamshi<span>OS</span></div>
+            <div class="top-center">PERSONAL DEVELOPER SPACE</div>
+            <div class="top-right" id="clock">00:00</div>
+        </header>
+
+        <!-- Desktop Content -->
+        <main class="workspace">
+
+            <div class="welcome">
+                <p class="small-text">WELCOME TO MY DIGITAL WORLD</p>
+                <h1>Hey, I'm <span>Vamshi.</span></h1>
+                <p>Developer in progress. Building something different.</p>
+            </div>
+
+            <!-- Desktop Applications -->
+            <div class="desktop-icons">
+
+                <div class="app-icon" data-app="about">
+                    <div class="icon">👨‍💻</div>
+                    <p>About Me</p>
+                </div>
+
+                <div class="app-icon" data-app="projects">
+                    <div class="icon">📁</div>
+                    <p>Projects</p>
+                </div>
+
+                <div class="app-icon" data-app="skills">
+                    <div class="icon">⚡</div>
+                    <p>My Skills</p>
+                </div>
+
+                <div class="app-icon" data-app="terminal">
+                    <div class="icon">⌨️</div>
+                    <p>Terminal</p>
+                </div>
+
+                <div class="app-icon" data-app="contact">
+                    <div class="icon">📧</div>
+                    <p>Contact</p>
+                </div>
+
+                <div class="app-icon" data-app="resume">
+                    <div class="icon">📄</div>
+                    <p>Resume</p>
+                </div>
+                <div class="app-icon" data-app="taskmanager">
+    <div class="icon">⚙️</div>
+    <span>Task Manager</span>
+</div>
+                <div class="app-icon" data-app="settings">
+    <div class="icon">⚙️</div>
+    <span>Settings</span>
+</div>
+
+            </div>
+
+        </main>
+
+        <!-- Bottom Dock -->
+        <footer class="dock">
+
+    <button class="start-button" id="start-button" title="Start Menu">
+        🪟
+    </button>
+
+    <div class="dock-item">🏠</div>
+    <div class="dock-item">📁</div>
+    <div class="dock-item">💻</div>
+    <button class="dock-item" data-app="settings" title="Settings">
+    ⚙️
+</button>
+    <button class="notification-button" id="notification-button">
+    🔔
+</button>
+
+</footer>
+
+    </div>
+<div id="context-menu" class="context-menu">
+    <div class="menu-item" id="refresh-desktop">🔄 Refresh</div>
+    <div class="menu-item" id="open-terminal">⌨️ Open Terminal</div>
+    <div class="menu-item" id="about-vamshios">💻 About VamshiOS</div>
+</div>
+<div class="start-menu" id="start-menu">
+
+    <div class="start-menu-header">
+        <h2>VamshiOS</h2>
+        <p>Welcome back, Vamshi 👋</p>
+    </div>
+
+    <div class="start-menu-search">
+    🔍
+    <input type="text" id="app-search" placeholder="Search apps...">
+</div>
+
+    <h3>📌 Pinned Apps</h3>
+
+    <div class="start-apps">
+        <button data-start-app="about">👨‍💻<span>About Me</span></button>
+        <button data-start-app="projects">🚀<span>Projects</span></button>
+        <button data-start-app="skills">💡<span>My Skills</span></button>
+        <button data-start-app="terminal">⌨️<span>Terminal</span></button>
+        <button data-start-app="contact">📬<span>Contact</span></button>
+        <button data-start-app="resume">📄<span>Resume</span></button>
+        <button data-start-app="taskmanager">
+    ⚙️<span>Task Manager</span>
+</button>
+<button data-start-app="settings">
+    ⚙️<span>Settings</span>
+</button>
+    </div>
+
+    <div class="start-menu-footer">
+        <span>👤 Chettukindi Vamshi</span>
+        <span>⚡ VamshiOS</span>
+        <button id="power-button">⏻</button>
+    </div>
+
+</div>
+<!-- NOTIFICATION CENTER -->
+
+<div class="notification-center" id="notification-center">
+
+    <div class="notification-header">
+        <h2>Notification Center</h2>
+        <button id="close-notifications">✕</button>
+    </div>
+
+    <div class="notification-date" id="notification-date">
+        Loading date...
+    </div>
+
+    <div class="quick-settings">
+        <button id="dark-mode-toggle">🌙 Dark Mode</button>
+        <button id="wifi-toggle">📶 Wi-Fi</button>
+        <button id="sound-toggle">🔊 Sound</button>
+    </div>
+
+    <div class="notification-heading">
+        <h3>Notifications</h3>
+        <button id="clear-notifications">Clear All</button>
+    </div>
+
+    <div id="notification-list">
+        <div class="notification-card">
+            <strong>💻 VamshiOS</strong>
+            <p>Your personal desktop is running smoothly!</p>
+            <small>Just now</small>
+        </div>
+
+        <div class="notification-card">
+            <strong>🚀 Welcome</strong>
+            <p>Keep building amazing projects, Vamshi!</p>
+            <small>Just now</small>
+        </div>
+    </div>
+
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
