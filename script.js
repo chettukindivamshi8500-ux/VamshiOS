@@ -478,12 +478,7 @@ if (appName === "taskmanager") {
 if (appName === "settings") {
     setupSettings();
 }
-
-if (appName === "taskmanager") {
-    setupTaskManager();
 }
-}
-
 
 // Bring window to front
 function bringToFront(win) {
@@ -877,4 +872,79 @@ function setupTaskManager() {
     refreshTaskList();
 
     refreshButton.addEventListener("click", refreshTaskList);
+}
+// VAMSHIOS TERMINAL
+function setupTerminal() {
+    const input = document.getElementById("terminal-input");
+    const output = document.getElementById("terminal-output");
+
+    if (!input || !output) return;
+
+    input.focus();
+
+    function runCommand(command) {
+        const cmd = command.trim().toLowerCase();
+
+        output.innerHTML += `<p><span>vamshi@os:~$</span> ${command}</p>`;
+
+        switch (cmd) {
+            case "help":
+                output.innerHTML += `
+                    <p>Available commands:</p>
+                    <p>help - Show commands</p>
+                    <p>about - About Vamshi</p>
+                    <p>projects - View projects</p>
+                    <p>skills - View skills</p>
+                    <p>contact - Contact details</p>
+                    <p>date - Show current date</p>
+                    <p>time - Show current time</p>
+                    <p>clear - Clear terminal</p>
+                `;
+                break;
+
+            case "about":
+                output.innerHTML += "<p>I am Vamshi, a B.Tech CSE student and developer.</p>";
+                break;
+
+            case "projects":
+                output.innerHTML += "<p>BrandPhantom | Car Sales Analysis</p>";
+                break;
+
+            case "skills":
+                output.innerHTML += "<p>Python, JavaScript, HTML, CSS, React, Node.js, Git, Docker.</p>";
+                break;
+
+            case "contact":
+                output.innerHTML += "<p>Email: chettukindivamshi8500@gmail.com</p>";
+                break;
+
+            case "date":
+                output.innerHTML += `<p>${new Date().toLocaleDateString("en-IN")}</p>`;
+                break;
+
+            case "time":
+                output.innerHTML += `<p>${new Date().toLocaleTimeString("en-IN")}</p>`;
+                break;
+
+            case "clear":
+                output.innerHTML = "";
+                break;
+
+            case "":
+                break;
+
+            default:
+                output.innerHTML += `<p>Command not found: ${command}. Type help.</p>`;
+        }
+
+        output.scrollTop = output.scrollHeight;
+    }
+
+    input.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            const command = input.value;
+            input.value = "";
+            runCommand(command);
+        }
+    });
 }
